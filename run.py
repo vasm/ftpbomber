@@ -2,15 +2,20 @@
 
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication
+from ui_mainwindow import Ui_MainWindow
 import sys
 
+
 class MainWindow(QtWidgets.QMainWindow):
-	def __init__(self, parent=None):
-		super(MainWindow, self).__init__(parent)
+	def __init__(self):
+		super(QtWidgets.QMainWindow, self).__init__()
+
+		self.ui = Ui_MainWindow()
+		self.ui.setupUi(self)
 
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	main_window = MainWindow()
-	main_window.show()
-	app.exec_()
+	ui = MainWindow()
+	ui.show()
+	sys.exit(app.exec_())
